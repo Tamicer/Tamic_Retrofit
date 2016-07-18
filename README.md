@@ -1,11 +1,12 @@
 # Tamic_Retrofit
 user-defined Retrofit.  剖解Retrofit源码，实现简单自定义的Retrofit的框架
 
-只需普通请求实现Retrofit一样的效果，让你的网络接口迁移到Retrofit不再是神话
+只需普通http实现Retrofit一样的效果，让你的网络接口迁移到Retrofit不再是神话，
+
+感谢以下开源提供 resource
 
     compile 'com.loopj.android:android-async-http:1.4.9'
     compile 'com.alibaba:fastjson:1.2.12'
-
 
 
 
