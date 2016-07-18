@@ -8,7 +8,7 @@ user-defined Retrofit.  剖解Retrofit源码，实现简单自定义的Retrofit�
     compile 'com.loopj.android:android-async-http:1.4.9'
     compile 'com.alibaba:fastjson:1.2.12'
 
-
+测试URL："http://ip.taobao.com/service/getIpInfo.php?ip=21.22.11.33";
 
 作用
 -
