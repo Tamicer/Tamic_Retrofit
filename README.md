@@ -13,7 +13,7 @@ user-defined Retrofit.  剖解Retrofit源码，实现简单自定义的Retrofit�
 作用
 -
 
-实现自定义Retrofit 的网络框架，只适用于初学者学习了解Retrofit内部原理
+实现用async-http 自定义的Retrofit 网络框架，用来进阶学习了解Retrofit内部原理
 
 实现技术
 --
