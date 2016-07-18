@@ -32,14 +32,18 @@ APIService
    public interface ApiService {
 
     @TGet("service/getIpInfo.php")
-    Call<IpResult> getData(@TBody("ip") String ip,
+    Call<IpResult> getData(@TBody("ip") String ip,ICallback<IpResult> callBack);
+                    
+                    }
+     
+    ApiService service = tamic.create(ApiService.class);
 
-                      ICallback<IpResult> callBack);
-}
+
 
 execute
 --
-service.getData("21.22.11.33", new ICallback<IpResult>() {
+
+      service.getData("21.22.11.33", new ICallback<IpResult>() {
             @Override
             public void success(IpResult ipResult) {
                 // todo
