@@ -12,3 +12,41 @@ user-defined Retrofit.  剖解Retrofit源码，实现简单自定义的Retrofit�
 实现技术
 --
 反射，依赖注入，代理， 建造等模式等， 接口回调
+
+
+
+# 用法
+
+实例化Tamic （Retrofit）
+--
+     Tamic tamic = new Tamic.Builder(MainActivity.this)
+                .baseUrl("http://ip.taobao.com/")
+                .connectTimeout(5)
+                .addLog(true)
+                .build();
+                
+                
+APIService 
+--
+
+   public interface ApiService {
+
+    @TGet("service/getIpInfo.php")
+    Call<IpResult> getData(@TBody("ip") String ip,
+
+                      ICallback<IpResult> callBack);
+}
+
+execute
+--
+service.getData("21.22.11.33", new ICallback<IpResult>() {
+            @Override
+            public void success(IpResult ipResult) {
+                // todo
+            }
+
+            @Override
+            public void failed(Throwable e) {
+                // todo
+            }
+        });
