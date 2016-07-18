@@ -34,6 +34,8 @@ import static com.tamic.inject.core.Tamic.MethodType.*;
  *  define how requests are made. Create instances using {@linkplain Builder
  * the builder} and pass your interface to {@link #create} to generate an implementation.
  * Created by Tamic on 2016-07-13.
+ *
+ *{@link # https://github.com/NeglectedByBoss/Tamic_Retrofit}
  */
 public final class Tamic {
 

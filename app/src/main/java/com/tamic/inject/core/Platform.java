@@ -24,6 +24,7 @@ import java.util.concurrent.Executor;
 
 /**
  * Created by Tamic on 2016-07-13.
+ * {@link # https://github.com/NeglectedByBoss/Tamic_Retrofit}
  */
 public class Platform {
     private static final Platform PLATFORM = findPlatform();

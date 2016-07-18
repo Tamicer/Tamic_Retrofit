@@ -8,7 +8,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Created by LIUYONGKUI726 on 2016-07-15.
+ * Created by Tamic on 2016-07-15.
  */
 public class HandleThreadPool {
 
