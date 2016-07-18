@@ -29,18 +29,22 @@ user-defined Retrofit.  剖解Retrofit源码，实现简单自定义的Retrofit�
 APIService 
 --
 
-   public interface ApiService {
+    public interface ApiService {
 
     @TGet("service/getIpInfo.php")
     Call<IpResult> getData(@TBody("ip") String ip,ICallback<IpResult> callBack);
                     
                     }
      
-    ApiService service = tamic.create(ApiService.class);
+    
+Create Service
+--
+   
+     ApiService service = tamic.create(ApiService.class);
 
 
 
-execute
+Execute
 --
 
       service.getData("21.22.11.33", new ICallback<IpResult>() {
