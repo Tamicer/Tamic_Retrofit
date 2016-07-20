@@ -1,4 +1,4 @@
-# Tamic_Retrofit
+# Tamic
 user-defined Retrofit.  剖解Retrofit源码，实现简单自定义的Retrofit的框架
 
 只需普通http实现Retrofit一样的效果，让你的网络接口迁移到Retrofit不再是神话，
