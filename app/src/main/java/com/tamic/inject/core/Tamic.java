@@ -22,6 +22,7 @@ import java.lang.reflect.Proxy;
 import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 import cz.msebera.android.httpclient.Header;
@@ -51,6 +52,7 @@ public final class Tamic {
     private static ICallback call;
     private static Platform platform;
     private static Object obj;
+    private static Type objType;
 
     public enum MethodType {
         GET, POST, DELETE, PUT
@@ -141,7 +143,8 @@ public final class Tamic {
                 Log.d(TAG, "  TypeArgument: ");
                 for (Type mtype : types) {
                     Log.d(TAG, "   " + mtype);
-                    obj = ReflectionUtil.getClass(mtype);
+                    this.objType = mtype;
+                    obj = ReflectionUtil.getClass(objType);
                 }
             }
         }
@@ -218,7 +221,6 @@ public final class Tamic {
             this.isLog = isLog;
             return this;
         }
-
 
         /**
          * Sets the default connect timeout for new connections. A value of 0 means no timeout,
@@ -310,7 +312,18 @@ public final class Tamic {
                 String jstr = new String(responseBody);
                 Log.d(TamicHttpClient.TAG, " body:" + jstr);
                 if (call != null) {
-                    call.success(JSON.parseObject(jstr, IpResult.class));
+                    try {
+                        try {
+                            call.success(JSON.parseObject(jstr, ReflectionUtil.newInstance(objType).getClass()));
+                        } catch (InstantiationException e) {
+                            e.printStackTrace();
+                        } catch (IllegalAccessException e) {
+                            e.printStackTrace();
+                        }
+                    } catch (ClassNotFoundException e) {
+                        e.printStackTrace();
+                        call.failed(e);
+                    }
                 }
             }
         }
