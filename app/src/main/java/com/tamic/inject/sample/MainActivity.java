@@ -55,6 +55,14 @@ public class MainActivity extends AppCompatActivity {
             public void failed(Throwable e) {
                 Toast.makeText(MainActivity.this, "failed", Toast.LENGTH_SHORT).show();
             }
+
+            @Override
+            public void start() {
+                super.start();
+                Toast.makeText(MainActivity.this, "start", Toast.LENGTH_SHORT).show();
+            }
+
+            // more ..... you can implement
         });
     }
 

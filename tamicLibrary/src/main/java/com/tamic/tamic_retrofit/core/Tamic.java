@@ -297,6 +297,32 @@ public final class Tamic {
         }
 
         @Override
+        public void onStart() {
+            Log.d(TamicHttpClient.TAG, " onStart");
+            if( call != null) {
+                call.start();
+            }
+            super.onStart();
+        }
+
+        @Override
+        public void onFinish() {
+            super.onFinish();
+            if( call != null) {
+                call.finish();
+            }
+        }
+
+
+        @Override
+        public void onCancel() {
+            super.onCancel();
+            if( call != null) {
+                call.cancel();
+            }
+        }
+
+        @Override
         public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
 
             Log.d(TamicHttpClient.TAG, "onSuccess");
@@ -308,7 +334,7 @@ public final class Tamic {
             if (statusCode == HttpStatus.SC_OK) {
                 Log.d(TamicHttpClient.TAG, "OK:" + statusCode);
                 String jstr = new String(responseBody);
-                Log.d(TamicHttpClient.TAG, " body:" + jstr);
+                Log.d(TamicHttpClient.TAG, "responseBody :" + jstr);
                 if (call != null) {
                     try {
                         try {
@@ -330,7 +356,7 @@ public final class Tamic {
         public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
             if (error != null && error.getMessage() != null) {
                 Log.d(TamicHttpClient.TAG, "onFailure : " + statusCode);
-                Log.d(TamicHttpClient.TAG, "onFailure : " + new String(responseBody));
+                Log.d(TamicHttpClient.TAG, "responseBody : " + new String(responseBody));
                 Log.d(TamicHttpClient.TAG, error.getMessage());
             }
 
