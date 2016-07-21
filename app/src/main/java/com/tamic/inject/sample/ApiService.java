@@ -1,9 +1,10 @@
 package com.tamic.inject.sample;
 
-import com.tamic.inject.core.TBody;
-import com.tamic.inject.core.Call;
-import com.tamic.inject.core.TGet;
-import com.tamic.inject.core.ICallback;
+
+import com.tamic.tamic_retrofit.core.Call;
+import com.tamic.tamic_retrofit.core.ICallback;
+import com.tamic.tamic_retrofit.core.TBody;
+import com.tamic.tamic_retrofit.core.TGet;
 
 /**
  * Created by Tamic on 2016-07-13.

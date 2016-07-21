@@ -6,8 +6,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.tamic.inject.core.ICallback;
-import com.tamic.inject.core.Tamic;
+import com.tamic.tamic_retrofit.core.ICallback;
+import com.tamic.tamic_retrofit.core.Tamic;
 import com.tamic.inject.R;
 
 public class MainActivity extends AppCompatActivity {
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
                 .addLog(true)
                 .build();
 
-        service = tamic.create(ApiService.class);
+        ApiService service = tamic.create(ApiService.class);
 
         service.getData("21.22.11.33", new ICallback<IpResult>() {
             @Override

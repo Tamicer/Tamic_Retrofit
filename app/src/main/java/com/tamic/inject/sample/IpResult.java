@@ -181,4 +181,11 @@ public class IpResult implements Serializable {
         }
     }
 
+    @Override
+    public String toString() {
+        return "IpResult{" +
+                "code=" + code +
+                ", data=" + data +
+                '}';
+    }
 }
