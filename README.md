@@ -21,7 +21,14 @@ user-defined Retrofit.  剖解Retrofit源码，实现简单自定义的Retrofit�
 
 
 
+
+
 # 用法
+
+配置gradle
+--
+
+  >compile 'com.tamic:tamicLibrary:1.0.2'
 
 实例化Tamic （Retrofit）
 --
